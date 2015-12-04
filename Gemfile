@@ -46,3 +46,6 @@ gem 'sass', '>= 3.4.19'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
+
+# Use CoffeeScript version 1.8.0 to fix error 'ExecJS::ProgramError in views'
+gem 'coffee-script-source', '1.8.0'
