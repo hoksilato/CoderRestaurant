@@ -120,6 +120,8 @@ body:before {
 
 .cover {
   padding: 0 1.5rem;
+  width: 42rem;
+  margin: auto;
 }
 .cover .btn-lg {
   padding: .75rem 1.25rem;
@@ -169,6 +171,6 @@ body:before {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 42rem;
+    /*width: 42rem;*/
   }
 }
