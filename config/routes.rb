@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :dishes
+
   get 'contact' => 'contact#index'
 
   resources :menus
