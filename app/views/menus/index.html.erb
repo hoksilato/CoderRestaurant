@@ -1,0 +1,70 @@
+<%= stylesheet_link_tag '/css/narrow-jumbotron' %>
+
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills pull-right">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Menu", menus_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Dish", dishes_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Contact Us", contact_path, class: 'nav-link' %>
+        </li>
+      </ul>
+    </nav>
+    <h3 class="text-muted">Coder Restaurant</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="list-group">
+      <% @menus.each do |menu| %>
+        <%= link_to (menu.name + ' <span class="label label-default label-pill pull-right">14</span>').html_safe, menu, class: 'list-group-item' %>
+      <% end %>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <div class="col-lg-4">
+        <div class="card">
+          <img class="card-img-top" data-src="holder.js/100%x180/" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card">
+          <img class="card-img-top" data-src="holder.js/100%x180/" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card">
+          <img class="card-img-top" data-src="holder.js/100%x180/" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; CoderRestaurant 2015</p>
+  </footer>
+
+</div> <!-- /container -->
