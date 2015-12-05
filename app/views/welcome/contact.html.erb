@@ -1,2 +1,40 @@
-<h1>Welcome#contact</h1>
-<p>Find me in app/views/welcome/contact.html.erb</p>
+<%= stylesheet_link_tag '/css/narrow-jumbotron' %>
+
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills pull-right">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Menu", root_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Contact Us", welcome_contact_path, class: 'nav-link' %>
+        </li>
+      </ul>
+    </nav>
+    <h3 class="text-muted">Coder Restaurant</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3737757717076!2d106.7022000148008!3d10.782657892317255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f49428d4f6b%3A0x3a31bc0dde17a40d!2zRHJlYW1wbGV4IENvd29ya2luZyBTcGFjZSBWxINuIHBow7JuZywgc2hhcmVkIG9mZmljZSB2xINuIHBow7JuZyBjYW8gY-G6pXAgY2hvIHRodcOqIHRy4buNbiBnw7Np!5e0!3m2!1svi!2svn!4v1449287210308" width="705" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="row contact-info">
+    <address>
+      <strong>Coder Restaurant, Inc.</strong><br>
+      21 Nguyen Trung Ngan, Ben Nghe, <br>
+      Ho Chi Minh, Vietnam<br>
+      <abbr title="Phone">P:</abbr> (123) 456-7890
+    </address>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; CoderRestaurant 2015</p>
+  </footer>
+
+</div> <!-- /container -->
