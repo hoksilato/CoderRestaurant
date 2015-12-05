@@ -125,6 +125,9 @@ body:before {
   padding: .75rem 1.25rem;
   font-weight: bold;
 }
+.cover p.lead {
+  color: rgba(255,255,255,0.6);
+}
 
 
 /*
