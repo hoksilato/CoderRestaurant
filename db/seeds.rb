@@ -24,7 +24,6 @@ dishes.each.with_index do |value, index|
       name: value,
       description: Faker::Lorem.paragraph,
       price: Faker::Number.decimal(2),
-      image_url: 'http://loremflickr.com/262/180/' + Faker::Lorem.word,
       menu_id: menu_id
     )
 end
