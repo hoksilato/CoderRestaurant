@@ -4,7 +4,7 @@
     <h6 class="card-subtitle text-muted"><%= number_to_currency(dish.price, unit: 'đ', format: "%n %u") %> <span class="pull-right"><%= pluralize(dish.views, 'view') %></span></h6>
   </div>
   <% image_string = dish.name.downcase %>
-  <%= link_to image_tag(dish.image_url || 'http://loremflickr.com/262/180/' + image_string.gsub!(/\s/, '+'), alt: dish.name), dish %>
+  <%= link_to image_tag((dish.image_url.nil? || dish.image_url.empty?) ? 'http://loremflickr.com/262/180/' + image_string.gsub!(/\s/, '+') : dish.image_url, alt: dish.name), dish %>
   <div class="card-block">
     <p class="card-text"><%= dish.description %></p>
     <a href="#" class="btn btn-primary">Order</a>
