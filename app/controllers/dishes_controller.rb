@@ -10,6 +10,9 @@ class DishesController < ApplicationController
   # GET /dishes/1
   # GET /dishes/1.json
   def show
+    @dish = Dish.find(params[:id])
+    @dish.views ? @dish.views += 1 : @dish.views = 1
+    @dish.save
   end
 
   # GET /dishes/new

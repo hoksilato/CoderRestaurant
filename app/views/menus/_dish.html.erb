@@ -3,7 +3,8 @@
     <h4 class="card-title"><%= link_to dish.name, dish %></h4>
     <h6 class="card-subtitle text-muted"><%= number_to_currency(dish.price, unit: 'đ', format: "%n %u") %></h6>
   </div>
-  <%= link_to image_tag(dish.image_url, alt: dish.name), dish %>
+  <% image_string = dish.name.downcase %>
+  <%= link_to image_tag(dish.image_url || 'http://loremflickr.com/262/180/' + image_string.gsub!(/\s/, '+'), alt: dish.name), dish %>
   <div class="card-block">
     <p class="card-text"><%= dish.description %></p>
     <a href="#" class="btn btn-primary">Order</a>

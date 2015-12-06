@@ -1,34 +1,35 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag '/css/narrow-jumbotron' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @dish.name %>
-</p>
+<div class="container">
+  <%= render 'menus/header' %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @dish.description %>
-</p>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-lg-5">
+        <% image_string = @dish.name.downcase %>
+        <%= image_tag @dish.image_url || 'http://loremflickr.com/435/300/' + image_string.gsub!(/\s/, '+'), alt: @dish.name, style: 'width: 100%;' %>
+      </div>
+      <div class="col-lg-7">
+        <div class="card">
+          <div class="card-header">
+            <%= @dish.menu.name %>
+          </div>
+          <div class="card-block">
+            <h4 class="card-title"><%= @dish.name %></h4>
+            <p><%= number_to_currency(@dish.price, unit: 'đ', format: "%n %u") %></p>
+            <p class="card-text"><%= @dish.description %></p>
+            <a href="#" class="btn btn-primary">Order</a>
+          </div>
+          <div class="card-footer text-muted">
+            <%= pluralize(@dish.views, 'view') %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @dish.price %>
-</p>
+  <footer class="footer">
+    <p>&copy; CoderRestaurant 2015</p>
+  </footer>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @dish.image_url %>
-</p>
-
-<p>
-  <strong>Views:</strong>
-  <%= @dish.views %>
-</p>
-
-<p>
-  <strong>Menu:</strong>
-  <%= @dish.menu %>
-</p>
-
-<%= link_to 'Edit', edit_dish_path(@dish) %> |
-<%= link_to 'Back', dishes_path %>
+</div> <!-- /container -->
