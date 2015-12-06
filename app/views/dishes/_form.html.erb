@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :menu_id %><br>
-    <%= f.text_field :menu_id %>
+    <%= f.select :menu_id, Menu.all.collect{|menu| [menu.name, menu.id]} %>
   </div>
   <div class="actions">
     <%= f.submit %>
