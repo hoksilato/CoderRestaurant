@@ -49,3 +49,14 @@ end
 
 # Use CoffeeScript version 1.8.0 to fix error 'ExecJS::ProgramError in views'
 gem 'coffee-script-source', '1.8.0'
+
+# Use faker to generate “random” data for testing
+gem 'faker'
+
+# Paginator
+gem 'kaminari'
+
+# Use web console for debugging
+group :development do
+  gem 'web-console', '~> 2.0'
+end
