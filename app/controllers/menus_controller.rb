@@ -5,11 +5,37 @@ class MenusController < ApplicationController
   # GET /menus.json
   def index
     @menus = Menu.all
+    @sort = params[:sort]
+    if @sort == 'az'
+      @dishes = Dish.order(:name).page params[:page]
+    elsif @sort == 'za'
+      @dishes = Dish.order(name: :desc).page params[:page]
+    elsif @sort == 'priceLow'
+      @dishes = Dish.order(:price).page params[:page]
+    elsif @sort == 'priceHigh'
+      @dishes = Dish.order(price: :desc).page params[:page]
+    else
+      @dishes = Dish.order(:created_at).page params[:page]
+    end
   end
 
   # GET /menus/1
   # GET /menus/1.json
   def show
+    @menus = Menu.all
+    @menu = Menu.find(params[:id])
+    @sort = params[:sort]
+    if @sort == 'az'
+      @dishes = @menu.dishes.order(:name).page params[:page]
+    elsif @sort == 'za'
+      @dishes = @menu.dishes.order(name: :desc).page params[:page]
+    elsif @sort == 'priceLow'
+      @dishes = @menu.dishes.order(:price).page params[:page]
+    elsif @sort == 'priceHigh'
+      @dishes = @menu.dishes.order(price: :desc).page params[:page]
+    else
+      @dishes = @menu.dishes.order(:created_at).page params[:page]
+    end
   end
 
   # GET /menus/new

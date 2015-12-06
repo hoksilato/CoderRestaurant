@@ -1,9 +1,66 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag '/css/narrow-jumbotron' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @menu.name %>
-</p>
+<div class="container">
+  <%= render 'header' %>
 
-<%= link_to 'Edit', edit_menu_path(@menu) %> |
-<%= link_to 'Back', menus_path %>
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="list-group">
+        <%= link_to ('All' + ' <span class="label label-default label-pill pull-right">' + Dish.count.to_s + '</span>').html_safe, menus_path, class: 'list-group-item' %>
+      <% @menus.each do |menu| %>
+        <%= link_to (menu.name + ' <span class="label label-default label-pill pull-right">' + menu.dishes.count.to_s + '</span>').html_safe, menu, class: 'list-group-item' + (@menu.id == menu.id ? ' active' : '' ) %>
+      <% end %>
+      </div>
+    </div>
+    <div class="col-lg-9">
+    	<p id="notice"><%= notice %></p>
+
+      <form class="form-inline pull-right" id="sortForm" style="margin-bottom: 10px;">
+        <div class="form-group">
+          <label for="sortSelect">Sort by</label>
+          <select name="sort" class="form-control" id="sortSelect">
+            <option value="" <%= @sort == '' ? 'selected' : '' %>>Newest</option>
+            <option value="az" <%= @sort == 'az' ? 'selected' : '' %>>A - Z</option>
+            <option value="za" <%= @sort == 'za' ? 'selected' : '' %>>Z - A</option>
+            <option value="priceLow" <%= @sort == 'priceLow' ? 'selected' : '' %>>Price low to high</option>
+            <option value="priceHigh" <%= @sort == 'priceHigh' ? 'selected' : '' %>>Price high to low</option>
+          </select>
+        </div>
+      </form>
+
+    <% @dishes.each.with_index do |dish, index| %>
+      <% if index % 3 == 0 %>
+      <div class="card-deck-wrapper" style="margin-bottom: 20px">
+        <div class="card-deck">
+      <% end %>
+          <%= render partial: "dish", locals: {dish: dish} %>
+      <% if index % 3 == 2 || @dishes.count - 1 == index %>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-3">
+      <div class="col-lg-6" style="margin-top: 2rem;">
+        <%= page_entries_info @dishes, :entry_name => 'dish' %>
+      </div>
+      <div class="col-lg-6 text-right">
+        <%= paginate @dishes %>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; CoderRestaurant 2015</p>
+  </footer>
+
+</div> <!-- /container -->
+
+<script type="text/javascript">
+  $('#sortSelect').on('change', function(event){
+    $('#sortForm').submit();
+  });
+</script>
