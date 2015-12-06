@@ -37,7 +37,7 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 * [ ] User can also filter by type of Cuisine.
-* [ ] User can see how many times each menu item has been viewed, and sort items by “most viewed”.
+* [x] User can see how many times each menu item has been viewed, and sort items by “most viewed”.
 * [ ] User can leave a review (1-5 stars) for each dish, along with a text review.
 * [ ] User can see reviews and an average review score.
 * [ ] User can input "CODERSCHOOL" as a coupon code on the order page, which should give a 50% discount off of the order.

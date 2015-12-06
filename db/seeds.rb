@@ -24,6 +24,7 @@ dishes.each.with_index do |value, index|
       name: value,
       description: Faker::Lorem.paragraph,
       price: Faker::Number.decimal(2),
+      views: 0,
       menu_id: menu_id
     )
 end

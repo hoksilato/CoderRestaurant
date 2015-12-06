@@ -20,6 +20,7 @@
           <label for="sortSelect">Sort by</label>
           <select name="sort" class="form-control" id="sortSelect">
             <option value="" <%= @sort == '' ? 'selected' : '' %>>Newest</option>
+            <option value="mostViewed" <%= @sort == 'mostViewed' ? 'selected' : '' %>>Most viewed</option>
             <option value="az" <%= @sort == 'az' ? 'selected' : '' %>>A - Z</option>
             <option value="za" <%= @sort == 'za' ? 'selected' : '' %>>Z - A</option>
             <option value="priceLow" <%= @sort == 'priceLow' ? 'selected' : '' %>>Price low to high</option>

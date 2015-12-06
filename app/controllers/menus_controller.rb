@@ -14,6 +14,8 @@ class MenusController < ApplicationController
       @dishes = Dish.order(:price).page params[:page]
     elsif @sort == 'priceHigh'
       @dishes = Dish.order(price: :desc).page params[:page]
+    elsif @sort == 'mostViewed'
+      @dishes = Dish.order(views: :desc).page params[:page]
     else
       @dishes = Dish.order(:created_at).page params[:page]
     end
@@ -33,6 +35,8 @@ class MenusController < ApplicationController
       @dishes = @menu.dishes.order(:price).page params[:page]
     elsif @sort == 'priceHigh'
       @dishes = @menu.dishes.order(price: :desc).page params[:page]
+    elsif @sort == 'mostViewed'
+      @dishes = @menu.dishes.order(views: :desc).page params[:page]
     else
       @dishes = @menu.dishes.order(:created_at).page params[:page]
     end
