@@ -27,6 +27,9 @@
         <dt class="col-sm-3">Your address</dt>
         <dd class="col-sm-9"><%= @order.address %></dd>
 
+        <dt class="col-sm-3">Your email</dt>
+        <dd class="col-sm-9"><%= @order.email %></dd>
+
       <% if @order.coupon_code == 'CODERSCHOOL' %>
         <dt class="col-sm-3">Your coupon code</dt>
         <dd class="col-sm-9"><%= @order.coupon_code %></dd>
