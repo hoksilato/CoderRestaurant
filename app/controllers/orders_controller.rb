@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
           order_id: @order.id,
           dish_id: @dish.id
   		  )
-        format.html { redirect_to finish_order_path(@order), notice: 'Order was successfully created. Thank you!' }
+        format.html { redirect_to finish_order_path(@order), notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: finish_order_path(@order) }
       else
         format.html { render :new }
