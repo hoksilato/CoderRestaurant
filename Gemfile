@@ -63,3 +63,6 @@ end
 
 # For Heroku deployment
 gem 'rails_12factor', group: 'production'
+
+# Email validator
+gem 'email_validator'
