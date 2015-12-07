@@ -4,7 +4,9 @@
 
 Submitted by: **Cang Ta**
 
-Time spent: **14** hours spent in total
+Time spent: **20** hours spent in total
+
+URL: **http://arcane-gorge-2770.herokuapp.com/**
 
 ## User Stories
 
@@ -45,19 +47,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] Administrators can input new Menu with conditions:
-  * Name must not be blank, mimimum 5 characters
-  * Name only accepts characters
-  * Name is unique
-  * Name must begin with a uppercase
-- [ ] Administrators can input new Dish with conditions:
-  * Name must not be blank, mimimum 5 characters
-  ~~* Name only accepts characters~~
-  * Name is unique
-  * Name must begin with a uppercase
-  * Price must not be blank and greater than 0
-  * Price only accepts digits
-  * Dish must belong to a menu
+-
 
 The following **known issues**:
 
