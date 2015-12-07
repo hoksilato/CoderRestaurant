@@ -60,3 +60,6 @@ gem 'kaminari'
 group :development do
   gem 'web-console', '~> 2.0'
 end
+
+# For Heroku deployment
+gem 'rails_12factor', group: 'production'
