@@ -21,10 +21,10 @@ dishes.each.with_index do |value, index|
     menu_id += 1
   end
   Dish.create(
-      name: value,
-      description: Faker::Lorem.paragraph,
-      price: Faker::Number.decimal(2),
-      views: 0,
-      menu_id: menu_id
-    )
+    name: value,
+    description: Faker::Lorem.paragraph,
+    price: Faker::Number.decimal(2),
+    views: 0,
+    menu_id: menu_id
+  )
 end

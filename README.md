@@ -4,9 +4,7 @@
 
 Submitted by: **Cang Ta**
 
-Time spent: **4.5** hours spent in total
-
-URL: **Insert your Heroku URL here**
+Time spent: **14** hours spent in total
 
 ## User Stories
 
@@ -31,9 +29,9 @@ The following **required** functionality is complete:
 * [x] User can sort menu items by “alphabetical”, “price low to high”, and “price high to low”.
 * [ ] User should be able to get for a menu item and see results.
 * [x] Clicking on an item in the menu brings up its detail, where you see the description and a larger picture.
-* [ ] User can click “order” on a menu item to go to a “Create Order” page.
-* [ ] User is able to fill in their name, phone number, and address.
-* [ ] User is taken to a “Thank you for your order page” that lists the name of item, the total cost (delivery should cost 20,000 VND), the user’s name, the user’s address, and the time the order was created in human-readable format (for example, Tuesday, December 1, 15:25).
+* [x] User can click “order” on a menu item to go to a “Create Order” page.
+* [x] User is able to fill in their name, phone number, and address.
+* [x] User is taken to a “Thank you for your order page” that lists the name of item, the total cost (delivery should cost 20,000 VND), the user’s name, the user’s address, and the time the order was created in human-readable format (for example, Tuesday, December 1, 15:25).
 
 The following **optional** features are implemented:
 * [ ] User can also filter by type of Cuisine.
@@ -48,10 +46,23 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [ ] Administrators can input new Menu with conditions:
-  * [x] Name must not be blank, mimimum 5 characters
-  * [x] Name only accepts characters
-  * [x] Name is unique
-  * [x] Name must begin with a uppercase
+  * Name must not be blank, mimimum 5 characters
+  * Name only accepts characters
+  * Name is unique
+  * Name must begin with a uppercase
+- [ ] Administrators can input new Dish with conditions:
+  * Name must not be blank, mimimum 5 characters
+  ~~* Name only accepts characters~~
+  * Name is unique
+  * Name must begin with a uppercase
+  * Price must not be blank and greater than 0
+  * Price only accepts digits
+  * Dish must belong to a menu
+
+The following **known issues**:
+
+- Dish name doesn't only accept characters
+- New dish (Bún mắm) not display first with Newest sorting
 
 ## Video Walkthrough
 

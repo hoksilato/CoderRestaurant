@@ -1,0 +1,28 @@
+<%= form_for @order, url: orders_create_path(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= hidden_field_tag(:dish_id, @dish.id) %>
+  <fieldset class="form-group">
+    <%= f.label :customer_name %>
+    <%= f.text_field :customer_name, class: 'form-control' %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :phone %>
+    <%= f.text_field :phone, class: 'form-control' %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: 'form-control' %>
+  </fieldset>
+  <%= f.submit 'Order', class: 'btn btn-secondary' %>
+<% end %>

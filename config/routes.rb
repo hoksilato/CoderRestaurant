@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'order/:id', to: 'orders#new', as: 'new_order'
+
+  post 'orders/create'
+
+  get 'orders/finish/:id', to: 'orders#finish', as: 'finish_order'
+
   resources :dishes
 
   get 'contact' => 'contact#index'

@@ -7,6 +7,6 @@
   <%= link_to image_tag((dish.image_url.nil? || dish.image_url.empty?) ? 'http://loremflickr.com/262/180/' + image_string.gsub!(/\s/, '+') : dish.image_url, alt: dish.name), dish %>
   <div class="card-block">
     <p class="card-text"><%= dish.description %></p>
-    <a href="#" class="btn btn-primary">Order</a>
+    <%= link_to 'Order', new_order_path(dish), class: 'btn btn-primary' %>
   </div>
 </div>

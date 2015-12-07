@@ -1,0 +1,67 @@
+<%= stylesheet_link_tag '/css/narrow-jumbotron' %>
+
+<div class="container">
+  <%= render 'menus/header' %>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <p id="notice"><%= notice %></p>
+
+      <h4>Your order was created at <code><%= @order.created_at.strftime("%A, %B %d, %H:%M") %></code> with below information:</h4>
+
+      <dl class="dl-horizontal" style="margin-left: 0; margin-right: 0; margin-top: 25px;">
+        <dt class="col-sm-3">Your name</dt>
+        <dd class="col-sm-9"><%= @order.customer_name %></dd>
+
+        <dt class="col-sm-3">Your phone</dt>
+        <dd class="col-sm-9"><%= @order.phone %></dd>
+
+        <dt class="col-sm-3">Your address</dt>
+        <dd class="col-sm-9"><%= @order.address %></dd>
+      </dl>
+
+      <h4>You ordered <%= pluralize(@order.order_items.count, 'dish') %>:</h4>
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>#</th>
+            <th>Dish name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% total = 0 %>
+        <% index = 1 %>
+        <% @order.order_items.each do |order_item| %>
+          <tr>
+            <th scope="row"><%= index %></th>
+            <td><%= order_item.dish.name %></td>
+            <td><%= number_to_currency(order_item.dish.price, unit: 'đ', format: "%n %u") %></td>
+            <td><%= order_item.quantity %></td>
+            <td><%= number_to_currency(order_item.quantity * order_item.dish.price, unit: 'đ', format: "%n %u") %></td>
+          </tr>
+          <% total += (order_item.quantity * order_item.dish.price) %>
+          <% index += 1 %>
+        <% end %>
+          <tr>
+            <th scope="row"><%= index %></th>
+            <td colspan="3">Delivery fee</td>
+            <td><%= number_to_currency(20000, unit: 'đ', format: '%n %u') %></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td colspan="3"><strong>Total</strong></td>
+            <td><strong><%= number_to_currency(20000 + total, unit: 'đ', format: '%n %u') %></strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; CoderRestaurant 2015</p>
+  </footer>
+
+</div> <!-- /container -->

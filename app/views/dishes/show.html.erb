@@ -18,7 +18,7 @@
             <h4 class="card-title"><%= @dish.name %></h4>
             <p><%= number_to_currency(@dish.price, unit: 'đ', format: "%n %u") %></p>
             <p class="card-text"><%= @dish.description %></p>
-            <a href="#" class="btn btn-primary">Order</a>
+            <%= link_to 'Order', new_order_path(@dish), class: 'btn btn-primary' %>
           </div>
           <div class="card-footer text-muted">
             <%= pluralize(@dish.views, 'view') %>
