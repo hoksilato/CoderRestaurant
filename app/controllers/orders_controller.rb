@@ -42,9 +42,9 @@ EOF
       #Using Block
       smtp = Net::SMTP.new('smtp.gmail.com', 587 )
       smtp.enable_starttls
-      smtp.start('gmail.com', 'hotvitmuoi01@gmail.com', '12345679', :login) do |smtp|
-        smtp.send_message message, 'hotvitmuoi01@gmail.com', @order.email
-      end
+      # smtp.start('gmail.com', 'hotvitmuoi01@gmail.com', '12345679', :login) do |smtp|
+      #   smtp.send_message message, 'hotvitmuoi01@gmail.com', @order.email
+      # end
     end
   end
 
